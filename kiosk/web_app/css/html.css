@@ -1,0 +1,67 @@
+html {
+  margin-bottom: 1px;
+}
+
+html,
+body {
+  height: 100%;
+  -ms-overflow-style: none;
+  overflow: hidden !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font: 400 0.8em 'Lato', sans-serif;
+  line-height: 1.5em;
+  color: #333;
+  background-color: #EC1E24;
+}
+
+/* heading and paragraph */
+
+p {
+  line-height: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6, p, dl {
+  margin: 0;
+  padding: 10px 0;
+}
+
+h1 {   
+  clear: both;
+  font: 400 3em 'Lato', sans-serif
+}
+
+h2 {
+  clear: both;
+  font: 400 1.3em 'Lato', sans-serif;
+}
+
+h3 {
+  font: 700 1.1em 'Lato', sans-serif;
+}
+
+h4 {
+  font: 400 0.9em 'Lato', sans-serif;
+  text-transform: uppercase;
+}
+
+a{
+  color: inherit;
+}
+
+/* on hover no decoration */
+a:hover {
+  text-decoration: none;
+}
+
+/* button size custom */
+
+.btn-xl {
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  width:50%; 
+}
