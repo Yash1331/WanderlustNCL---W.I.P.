@@ -1,3 +1,7 @@
+# install the required packages (flask and geopy) using pip, and run the file using Python.
+#You can then access the API by sending a GET request to http://localhost:5000/locations?start_location=<start_location>&end_location=<end_location>,
+#where <start_location> and <end_location> are the latitude and longitude of the start and end locations, respectively, separated by a comma.
+
 from flask import Flask, request, jsonify
 from geopy.distance import geodesic
 import csv
