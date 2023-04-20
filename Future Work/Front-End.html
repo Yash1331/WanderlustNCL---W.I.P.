@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Location Finder</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<h1>Location Finder</h1>
+	<form id="location-form" action="" method="get">
+		<label for="start">Start Location:</label>
+		<input type="text" id="start" name="start" required>
+		<br>
+		<label for="end">End Location:</label>
+		<input type="text" id="end" name="end" required>
+		<br>
+		<input type="submit" value="Find Locations">
+	</form>
+	<br>
+	<div id="locations"></div>
+	<script>
+		const form = document.querySelector('#location-form');
+		const locationsDiv = document.querySelector('#locations');
+
+		form.addEventListener('submit', async (event) => {
+			event.preventDefault();
+			const formData = new FormData(event.target);
+			const start = formData.get('start');
+			const end = formData.get('end');
+			const url = `/locations?start=${start}&end=${end}`;
+			const response = await fetch(url);
+			const data = await response.json();
+			const locations = data.locations;
+			if (locations.length > 0) {
+				locationsDiv.innerHTML = `<h2>Locations:</h2><ul>${locations.map(location => `<li>${location}</li>`).join('')}</ul>`;
+			} else {
+				locationsDiv.innerHTML = '<p>No locations found.</p>';
+			}
+		});
+	</script>
+</body>
+</html>
